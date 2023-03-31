@@ -15,17 +15,27 @@ const DOMplayer0 = document.querySelector('.player--0');
 const DOMplayer1 = document.querySelector('.player--1');
 
 
-
+let scores, currentScore, activePlayer, playing;
 
 //Starting content
-DOMscore0.textContent = 0;
-DOMscore1.textContent = 0;
-DOMdice.classList.add('hidden');
+const init = function () {
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
 
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
+  DOMscore0.textContent = 0;
+  DOMscore1.textContent = 0;
+  DOMdice.classList.add('hidden');
+  DOMcurrent0.textContent = 0;
+  DOMcurrent1.textContent = 0;
+  DOMplayer0.classList.remove('player--winner');
+  DOMplayer1.classList.remove('player--winner');
+  DOMplayer0.classList.add('player--active');
+  DOMplayer1.classList.remove('player--active');
+};
+
+init();
 
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -65,7 +75,7 @@ DOMbtnHold.addEventListener('click', function () {
     document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
 
     // 2. Check if player's score is >= 100
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       // Finish the game
       document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
       document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
@@ -81,5 +91,11 @@ DOMbtnHold.addEventListener('click', function () {
     }
   }
 });
+
+DOMbtnNew.addEventListener('click', init)
+
+
+  // // RELOAD GAME. MY SOLUTION:
+  // window.location.reload();
 
 
