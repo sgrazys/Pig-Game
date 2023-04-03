@@ -14,43 +14,6 @@ Web page published at: [https://sgrazys.github.io/Pig-Game/](https://sgrazys.git
 - eventListeners
 - condiitonal rendering
 
-## 🧰 Getting Started
-
-### 💻 Prerequisites
-
-Node.js - _download and install_
-
-```
-https://nodejs.org
-```
-
-Git - _download and install_
-
-```
-https://git-scm.com
-```
-
-### 🚀 Launch locally
-
-Would like to run this project locally? Open terminal and follow these steps:
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/sgrazys/Pig-Game.git
-   ```
-2. Install NPM packages
-   ```
-   npm i
-   ```
-   or
-   ```
-   npm install
-   ```
-3. Run the server
-   ```
-   npm run dev
-   ```
-
 ### 🧪 Running tests
 
 There is no tests for this project.
